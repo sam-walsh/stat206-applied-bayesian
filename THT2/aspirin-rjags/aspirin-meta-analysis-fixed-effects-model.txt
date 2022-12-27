@@ -1,0 +1,14 @@
+model {
+
+  mu ~ dunif( -2, 5 )
+
+  for ( i in 1:k ) {
+
+    y[ i ] ~ dnorm( mu, tau.y[ i ] )
+
+  }
+
+  positive.effect <- step( mu )
+
+}
+
